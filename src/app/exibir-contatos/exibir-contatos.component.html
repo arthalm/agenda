@@ -1,4 +1,4 @@
-<!--<table *ngIf="agenda.obterTodosContatos().length > 0">
+<table *ngIf="agenda.obterTodosContatos().length > 0">
     <tr>
         <th>Nome</th>
         <th>Telefone</th>
@@ -6,11 +6,11 @@
         <th>Aniversário</th>
         <th>Relação</th>
     </tr>
-    <tr *ngFor="let cc of contatos">
+    <tr *ngFor="let cc of agenda.obterTodosContatos()">
         <td>{{cc.nome}}</td>
         <td>{{cc.telefone}}</td>
         <td>{{cc.email}}</td>
         <td>{{cc.aniversario}}</td>
         <td>{{cc.relacao}}</td>
     </tr>
-</table>-->
+</table>

@@ -6,13 +6,15 @@ export class Contato {
     private _email: string;
     private _aniversario: Date;
     private _relacao: Relação;
+    private _favorito: boolean;
 
-    constructor(nm, tl, em, an, rl) {
+    constructor(nm: string, tl: string, em: string, an: Date, rl: Relação, fv: boolean) {
         this.nome = nm;
         this.telefone = tl;
         this.email = em;
         this.aniversario = new Date(an);
         this.relacao = rl;
+        this.favorito = fv;
     };
 
     public get nome(): string {
@@ -53,5 +55,13 @@ export class Contato {
 
     public set relacao(rl: Relação) {
         this._relacao = rl;
+    };
+
+    public get favorito(): boolean {
+        return this._favorito;
+    };
+
+    public set favorito(fv: boolean) {
+        this._favorito = fv;
     };
 };
