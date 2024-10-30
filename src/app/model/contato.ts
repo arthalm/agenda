@@ -7,14 +7,14 @@ export class Contato {
     private _aniversario: Date;
     private _relacao: Relação;
     private _favorito: boolean;
-    
-    constructor(nm, tl, em, an, rl, fv) {
+
+    constructor(nm: string, tl: string, em: string, an: Date, rl: Relação, fv: boolean) {
         this.nome = nm;
         this.telefone = tl;
         this.email = em;
         this.aniversario = new Date(an);
         this.relacao = rl;
-        this.favorito = fv
+        this.favorito = fv;
     };
 
     public get nome(): string {
