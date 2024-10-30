@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdicionarContatoComponent } from './adicionar-contato/adicionar-contato.component';
 import { ExibirContatosComponent } from './exibir-contatos/exibir-contatos.component';
+import { ExibirFavoritosComponent } from './exibir-favoritos/exibir-favoritos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdicionarContatoComponent,
-    ExibirContatosComponent
+    ExibirContatosComponent,
+    ExibirFavoritosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="container pt-1">
-    <div class="container text-bg-primary d-flex justify-content-center border border-dark rounded p-2 w-25">
+    <div class="container text-bg-info d-flex justify-content-center border border-dark rounded p-2 w-25">
         <div class="row gy-5">
             <div class="col">
                 <form>
@@ -23,8 +23,29 @@
                             <option *ngFor="let rl of relacoes" [value]="rl">{{rl}}</option>
                         </select>
                     </div>
+                    <label for="favorito">Contato favorito?</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" #favorito>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sim.
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" #favorito>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Não.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <input type="button" value="Cadastrar"
-                        (click)="adicionar(nome.value, telefone.value, email.value, aniversario.value, relacao.value)">
+                        (click)="adicionar(nome.value, telefone.value, email.value, aniversario.value, relacao.value, true)">
                 </form>
             </div>
         </div>
@@ -32,7 +53,8 @@
     <div class="container d-flex justify-content-center pt-2">
         <div class="row">
             <div class="col">
-                <table class="table table-primary table-bordered border-secondary text-light" *ngIf="contatos.length > 0">
+                <table class="table table-primary table-bordered border-secondary text-light"
+                    *ngIf="contatos.length > 0">
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
@@ -40,6 +62,7 @@
                             <th scope="col">E-mail</th>
                             <th scope="col">Aniversário</th>
                             <th scope="col">Relação</th>
+                            <th scope="col">Favorito?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +72,7 @@
                             <td>{{cc.email}}</td>
                             <td>{{cc.aniversario | date:'dd/MM/yyyy'}}</td>
                             <td>{{cc.relacao}}</td>
+                            <td>{{cc.favorito}}</td>
                         </tr>
                     </tbody>
                 </table>

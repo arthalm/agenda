@@ -25,9 +25,9 @@ export class AdicionarContatoComponent implements OnInit {
     this.pegarRelacoes();
   }
 
-  adicionar(nome: string, telefone: string, email: string, aniversario: string, relacao: string) {
+  adicionar(nome: string, telefone: string, email: string, aniversario: string, relacao: string, favorito: boolean) {
     let dataAniversario = new Date (aniversario);
-    let pessoa = new Contato(nome, telefone, email, dataAniversario, relacao as Relação);
+    let pessoa = new Contato(nome, telefone, email, dataAniversario, relacao as Relação, favorito);
     this.contatos.push(pessoa);
   };
 
