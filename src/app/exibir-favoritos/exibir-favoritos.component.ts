@@ -9,5 +9,6 @@ import { AgendaService } from '../model/agenda.service';
 
 export class ExibirFavoritosComponent {
   constructor(public agenda: AgendaService) {
-  }
-}
+
+  };
+};

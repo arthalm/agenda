@@ -42,11 +42,7 @@ export class AgendaService {
     return undefined;
   };
 
-  obterContatosFavoritos(): boolean {
-    if (c.favorito === true) {
-      return true
-    } else {
-    return false
-    };
+  obterContatosFavoritos(): Contato[] {
+    return this.contatos.filter(c => c.favorito);
   };
 };

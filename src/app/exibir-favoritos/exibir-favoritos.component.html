@@ -1,6 +1,10 @@
-<table *ngIf="agenda.obterTodosContatos().length > 0">
+<table class="mt-1" *ngIf="agenda.obterTodosContatos().length > 0">
     <tr>
         <th>Nome</th>
         <th>Favorito?</th>
+    </tr>
+    <tr *ngFor="let cc of agenda.obterContatosFavoritos()">
+        <td>{{cc.nome}}</td>
+        <td>{{cc.favorito ? "Sim" : ""}}</td>
     </tr>
 </table>

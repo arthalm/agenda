@@ -1,0 +1,13 @@
+th {
+    background-color: indigo;
+    color: white;
+    border: solid black 1px;
+    text-align: center;
+}
+
+td {
+    background-color: blueviolet;
+    color: white;
+    border: solid black 1px;
+    text-align: center;
+}
