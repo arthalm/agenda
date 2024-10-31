@@ -1,1 +1,6 @@
-<p>exibir-favoritos works!</p>
+<table *ngIf="agenda.obterTodosContatos().length > 0">
+    <tr>
+        <th>Nome</th>
+        <th>Favorito?</th>
+    </tr>
+</table>

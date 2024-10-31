@@ -1,0 +1,13 @@
+#botao {
+    background-color: green;
+    color: white;
+    align-items: center;
+    align-self: center;
+}
+
+#botao2 {
+    background-color: red;
+    color: white;
+    align-items: center;
+    align-self: center;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Relação } from '../model/tipocontato';
 import { Contato } from '../model/contato';
 import { AgendaService } from '../model/agenda.service';
@@ -11,7 +11,7 @@ import { AgendaService } from '../model/agenda.service';
 
 export class AdicionarContatoComponent {
 
-
+  relacoes: Relação[];
 
   constructor(private agenda: AgendaService) {
     this.relacoes = Object.values(Relação);
@@ -25,25 +25,24 @@ export class AdicionarContatoComponent {
   };
 
   getRelacao(str: string): Relação {
-
     if (str === Relação.AMG) {
-      return Relação.AMG
+      return Relação.AMG;
     } 
     
     else if (str === Relação.FAM) {
-      return Relação.FAM
+      return Relação.FAM;
     }
 
     else if (str === Relação.TRA) {
-      return Relação.TRA
+      return Relação.TRA;
     }
 
     else if (str === Relação.OTR) {
-      return Relação.OTR
+      return Relação.OTR;
     }
 
     else {
-      return Relação.IND
-    }
+      return Relação.IND;
+    };
   };
 };

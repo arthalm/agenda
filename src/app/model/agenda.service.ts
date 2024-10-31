@@ -42,10 +42,11 @@ export class AgendaService {
     return undefined;
   };
 
-  favoritarContato(c: Contato): boolean {
-    if(1 > 0) {
-      return true;
+  obterContatosFavoritos(): boolean {
+    if (c.favorito === true) {
+      return true
+    } else {
+    return false
     };
-    return false;
   };
 };
