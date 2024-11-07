@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Relação } from '../model/tipocontato';
 import { Contato } from '../model/contato';
 import { AgendaService } from '../model/agenda.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-adicionar-contato',
@@ -12,17 +13,38 @@ import { AgendaService } from '../model/agenda.service';
 export class AdicionarContatoComponent {
 
   relacoes: Relação[];
+  formCadastro: FormGroup;
 
-  constructor(private agenda: AgendaService) {
+  constructor(private agenda: AgendaService, private fb: FormBuilder) {
     this.relacoes = Object.values(Relação);
+
+    this.formCadastro = this.fb.group({
+      nome: ['', Validators.required, Validators.minLength(2)],
+      tel: ['', Validators.required],
+      email: ['', Validators.required],
+      ani: [new Date(), Validators.required],
+      rel: [Relação.IND, Validators.required],
+      fav: [false]
+    })
   };
 
-  adicionar(nome: string, telefone: string, email: string, aniversario: string, relacao: string, favorito: boolean) {
-    console.log(favorito);
-    let dataAniversario = new Date (aniversario);
-    let pessoa = new Contato(nome, telefone, email, dataAniversario, relacao as Relação, favorito);
+  adicionar() {
+    let cont = this.formCadastro.value
+
+    let pessoa = new Contato(cont.nome, cont.tel, cont.email, new Date(cont.ani), this.getRelacao(cont.rel), cont.fav);
     this.agenda.adicionarContato(pessoa);
   };
+
+  limparForm() {
+    this.formCadastro.setValue({
+      nome: '',
+      tel: '',
+      email: '',
+      ani: new Date(),
+      rel: Relação.IND,
+      fav: false
+    })
+  }
 
   getRelacao(str: string): Relação {
     if (str === Relação.AMG) {
